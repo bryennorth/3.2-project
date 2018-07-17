@@ -20,6 +20,7 @@ module.exports = {
     'Initial Page Load and Adding an Employee': browser => {
         EmployeeManager
         .waitForElementPresent('@emp1', 5000)
+        //DEM-2
         .verify.containsText('@pageHeader', 'Employee Manager')
         EmployeeManager
         .verify.containsText('@footer', 'Version 1.2')
@@ -45,6 +46,7 @@ module.exports = {
         .click('@emp8')
         .click('@emp9')
         .click('@emp10')
+        //DEM-9
         .click('@add')
         .click('@emp11')
         .assert.valueContains('@nameInputField', 'New Employee')
@@ -57,6 +59,7 @@ module.exports = {
     //https://dmutah.atlassian.net/browse/DEM-7, https://dmutah.atlassian.net/browse/DEM-8, https://dmutah.atlassian.net/browse/DEM-10
     'Generating Errors, Clearing Errors, Correcting Errors': browser => {
         EmployeeManager
+        //DEM-7
         .setValue('@nameInputField', inputData.badNameInput)
         .setValue('@phoneNumberInputField', inputData.badPhoneInput)
         .setValue('@titleInputField', inputData.badTitleInput)
@@ -64,10 +67,12 @@ module.exports = {
         .waitForElementPresent('@nameError', 500)
         .waitForElementPresent('@phoneError', 500)
         .waitForElementPresent('@titleError', 500)
+        //DEM-8
         .click('@cancelButton')
         .waitForElementNotPresent('@nameError', 500)
         .waitForElementNotPresent('@phoneError', 500)
         .waitForElementNotPresent('@titleError', 500)
+        //DEM-10
         .clearValue('@nameInputField')
         .clearValue('@phoneNumberInputField')
         .clearValue('@titleInputField')
@@ -89,9 +94,10 @@ module.exports = {
         .waitForElementNotPresent('@phoneError', 500)
         .waitForElementNotPresent('@titleError', 500)
     },
-    //https://dmutah.atlassian.net/browse/DEM-6, https://dmutah.atlassian.net/browse/DEM-4,https://dmutah.atlassian.net/browse/DEM-5
+    //https://dmutah.atlassian.net/browse/DEM-6, https://dmutah.atlassian.net/browse/DEM-4, https://dmutah.atlassian.net/browse/DEM-5
     'Navigating Away, Cancelling and Saving Changes': browser => {
             EmployeeManager
+            //DEM-6
             .click('@emp5')
             .verify.valueContains('@nameInputField', 'Dollie Berry')
             .verify.valueContains('@phoneNumberInputField', '4873459812')
@@ -100,11 +106,14 @@ module.exports = {
             .setValue('@phoneNumberInputField', inputData.badPhoneInput)
             .setValue('@titleInputField', inputData.badTitleInput)
             .click('@emp6')
+            .waitForElementPresent('@disabledSaveButton', 500)
+            .waitForElementPresent('@disabledCancelButton', 500)
             .verify.containsText('@employeeID', '6')
             .click('@emp5')
             .verify.valueContains('@nameInputField', 'Dollie Berry')
             .verify.valueContains('@phoneNumberInputField', '4873459812')
             .verify.valueContains('@titleInputField', 'Front-End Developer')
+            //DEM-4
             .setValue('@nameInputField', inputData.badNameInput)
             .setValue('@phoneNumberInputField', inputData.badPhoneInput)
             .setValue('@titleInputField', inputData.badTitleInput)
@@ -112,6 +121,9 @@ module.exports = {
             .verify.valueContains('@nameInputField', 'Dollie Berry')
             .verify.valueContains('@phoneNumberInputField', '4873459812')
             .verify.valueContains('@titleInputField', 'Front-End Developer')
+            .waitForElementPresent('@disabledSaveButton', 500)
+            .waitForElementPresent('@disabledCancelButton', 500)
+            //DEM-5
             .clearValue('@nameInputField')
             .setValue('@nameInputField', inputData.nameInput)
             .clearValue('@phoneNumberInputField')
@@ -119,6 +131,8 @@ module.exports = {
             .setValue('@phoneNumberInputField', inputData.phoneInput)
             .setValue('@titleInputField', inputData.titleInput)
             .click('@saveButton')
+            .waitForElementPresent('@disabledSaveButton', 500)
+            .waitForElementPresent('@disabledCancelButton', 500)
             .waitForElementNotPresent('@nameError', 500)
             .waitForElementNotPresent('@phoneError', 500)
             .waitForElementNotPresent('@titleError', 500)

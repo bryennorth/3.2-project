@@ -7,8 +7,14 @@ module.exports = {
         //Buttons
         saveButton: 'button[id="saveBtn"]',
         cancelButton: 'button[name="cancel"]',
-        disabledSaveButton: '',
-        disabledCancelButton: '',
+        disabledSaveButton: {
+            selector: '(//button[@name="save"])[@disabled]',
+            locateStrategy: 'xpath',
+        },
+        disabledCancelButton: {
+            selector: '(//button[@name="cancel"])[@disabled]',
+            locateStrategy: 'xpath',
+        },
         //Infocard
         Infocard: 'div[class=infoCard]',
         noEmployee: 'p[id="noEmployee"]',
