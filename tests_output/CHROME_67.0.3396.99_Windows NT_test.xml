@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="3">
+
+  <testsuite name="test"
+    errors="0" failures="1" hostname="" id="" package="test" skipped="0"
+    tests="3" time="14.24" timestamp="Tue, 17 Jul 2018 20:22:08 GMT">
+  
+    <testcase name="Initial Page Load and Adding an Employee" classname="test" time="8.531" assertions="17">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="Testing if element &lt;li[name=employee6]&gt; contains text: &#34;Harriet Williamson&#34;.">    at Object.Initial Page Load and Adding an Employee (C:\Users\North\Documents\DevMountain\3.2-Project\tests\test.js:33:17)</failure>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Generating Errors, Clearing Errors, Correcting Errors" classname="test" time="2.890" assertions="12">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Navigating Away, Cancelling and Saving Changes" classname="test" time="2.815" assertions="20">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
